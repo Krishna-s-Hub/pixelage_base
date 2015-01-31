@@ -29,6 +29,7 @@ import com.android.systemui.qs.tiles.VolumeTile
 import com.android.systemui.qs.tiles.WifiTile
 import com.android.systemui.qs.tiles.PowerShareTile
 import com.android.systemui.qs.tiles.RingerModeTile
+import com.android.systemui.qs.tiles.SyncTile
 
 import dagger.Binds
 import dagger.Module
@@ -109,4 +110,10 @@ interface CustomModule {
     @IntoMap
     @StringKey(RingerModeTile.TILE_SPEC)
     fun bindRingerModeTile(RingerModeTile: RingerModeTile): QSTileImpl<*>
+
+    /** Inject SyncTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(SyncTile.TILE_SPEC)
+    fun bindSyncTile(syncTile: SyncTile): QSTileImpl<*>
 }
